@@ -1,0 +1,32 @@
+<div class="drinks-container" *ngIf="drinks.drinks?.length > 0;  else elseBlock">
+  <div class="drinks-title">
+    <h1 *ngIf="drink">Your drinks for <span>{{ drink.toUpperCase() }}</span></h1>
+    <div *ngIf="drinks.drinks.length > 0" class="badge"> {{  drinks.drinks.length + " hits"   }}</div>
+  </div>
+
+  <div class="drinks" *ngIf="drinks.drinks.length > 0">
+    <div *ngFor="let drink of drinks.drinks" class="drink">
+      <img [src]="drink.strDrinkThumb">
+      <div>
+        <h3>{{ drink.strDrink }}</h3>
+        <a   class="btn" [routerLink]="'/details/' + drink.idDrink">
+          view
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #elseBlock>
+  <div class="no-hits" *ngIf="!isLoading">
+    <div>
+      <img src="/images/logo.png" alt="Logo">
+      <h3>No drinks available for <span class="color-primary">{{ drink.toUpperCase() }}</span></h3>
+      <h2>Get drunk on something else...</h2>
+      <a  class="btn" routerLink="/">
+        Back to drinks?
+      </a>
+    </div>
+  </div>
+</ng-template>
+
+

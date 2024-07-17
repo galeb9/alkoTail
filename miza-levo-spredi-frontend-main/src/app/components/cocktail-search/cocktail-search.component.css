@@ -1,0 +1,8 @@
+.cocktail-search .search {
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap:  24px 12px ;
+}
+

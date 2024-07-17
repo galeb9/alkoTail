@@ -1,0 +1,40 @@
+.drinks-container .drinks-title  {
+  margin: 60px 0 40px 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--primary);
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.drinks-container h1 > span {
+  color: var(--primary);
+}
+.drinks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 60px;
+}
+.drink {
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  transition: var(--transition) 0.1s;
+}
+
+.drink:hover {
+  transform: translateY(-10px);
+
+}
+.drink img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius) var(--radius)  0 0;
+}
+.drink > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 20px 26px;
+}

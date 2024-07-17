@@ -1,0 +1,7 @@
+<div class="cocktail-search">
+  <div class="search">
+      <a *ngFor="let alcohol of alcoholList"  class="btn" [routerLink]="'drinks/' + alcohol.toLowerCase()">
+        {{ alcohol }}
+      </a>
+  </div>
+</div>

@@ -1,0 +1,83 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  --headerHeight: 64px;
+  --primary: #df2669;
+  --radius: 6px;
+  --transition: all 0.2s ease-in-out;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.custom-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding:  20px;
+}
+
+.shadow {
+  box-shadow: var(--shadow);
+}
+
+a {
+  text-decoration: none ;
+}
+.btn {
+  padding: 6px 18px;
+  border-radius: var(--radius);
+  color: var(--primary) !important;
+  border: 2px solid var(--primary);
+  cursor: pointer;
+  transition: var(--transition);
+  width: max-content;
+}
+.btn:hover {
+  color: white !important;
+  background: var(--primary);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+.color-primary {
+  color: var(--primary);
+}
+
+.badge {
+  background: black;
+  color: white;
+  padding: 8px 16px;
+  border-radius: var(--radius);
+  opacity: 0.8;
+}
+
+.no-hits {
+  display: flex;
+  justify-content: center;
+  margin-top: 20vh;
+  text-align: center;
+
+}
+.no-hits h3 {
+  margin: 20px 0;
+}
+.no-hits h2 {
+  margin-bottom: 20px;
+}

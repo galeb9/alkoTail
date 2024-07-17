@@ -1,0 +1,13 @@
+.home-welcome {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  padding-top: 10vh;
+}
+.home-welcome h1 {
+  margin-top: 20px;
+}
+.home-welcome p {
+  font-size: 20px;
+}

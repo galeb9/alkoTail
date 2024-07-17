@@ -1,0 +1,39 @@
+<div class="details" *ngIf="cocktail; else elseBlock">
+    <div class="info">
+      <button class="btn info-btn" (click)="goBack()">Back</button>
+      <h1>{{cocktail?.name}}</h1>
+
+      <div *ngIf="cocktail.instructions" class="instructions">
+        <h3 class="primary-col-title">Instructions</h3>
+        <p>{{ cocktail.instructions}}</p>
+      </div>
+
+      <div *ngIf="cocktail.ingredients" class="ingredients">
+        <h3 class="primary-col-title">Ingredients</h3>
+        <div *ngFor="let item of cocktail?.ingredients | keyvalue: valueAscOrder" class="ingredient">
+          <b>{{item.key}}</b>
+          <span *ngIf="item.value">{{ item.value.trim() || "N/A" }}</span>
+        </div>
+      </div>
+
+      <div *ngIf="wiki.opening_text" class="wiki">
+        <h3 class="primary-col-title">Wiki</h3>
+        <p>{{wiki?.opening_text}}</p>
+      </div>
+
+    </div>
+    <div class="img-container">
+      <img src="{{cocktail.image}}">
+    </div>
+</div>
+<ng-template #elseBlock>
+  <div class="no-hits" *ngIf="!isLoading">
+    <div>
+      <img src="/images/logo.png" alt="Logo">
+      <h3>No cocktail available</h3>
+      <h2>Get drunk on something else...</h2>
+      <button class="btn info-btn" (click)="goBack()">Back</button>
+    </div>
+  </div>
+</ng-template>
+

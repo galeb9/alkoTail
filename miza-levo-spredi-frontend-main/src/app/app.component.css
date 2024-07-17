@@ -1,0 +1,6 @@
+.content {
+  min-height: calc(100vh - (2 * var(--headerHeight)));
+}
+@media screen and (max-width: 650px) {
+
+}
