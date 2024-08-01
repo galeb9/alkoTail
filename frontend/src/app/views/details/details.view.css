@@ -4,15 +4,11 @@
   justify-content: center;
   align-items: center;
   gap: 150px;
-
 }
 
-
-.details info h1 {
-}
 .ingredient {
   margin-top: 10px;
-  padding: 6px 10px ;
+  padding: 6px 10px;
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid var(--primary);
@@ -20,34 +16,26 @@
 .info {
   flex: 1;
 }
-.info .wiki p {
-}
 .img-container {
   flex: 1;
 }
 
 .img-container img {
   border-radius: var(--radius);
-
 }
 
 .primary-col-title {
-  margin-top: 26px ;
+  margin-top: 26px;
   margin-bottom: 12px;
   color: var(--primary);
 }
 
 .btn {
-  opacity: 0.7;
-  margin-bottom: 14px;
-}
-
-.btn:hover {
-
+  margin-top: 30px;
+  background: white;
 }
 
 @media screen and (max-width: 650px) {
-
   .details {
     flex-direction: column-reverse;
     gap: 0;
@@ -57,6 +45,3 @@
     margin: 10px 0 30px 0;
   }
 }
-
-
-

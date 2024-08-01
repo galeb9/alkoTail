@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
-import {HeaderComponent} from "./components/header/header.component";
-import {FooterComponent} from "./components/footer/footer.component";
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { CocktailService } from './services/cocktail.service';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterOutlet, HeaderComponent, FooterComponent, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
   title = 'cocktail-fe';
@@ -19,9 +19,8 @@ export class AppComponent {
 
   cocktail: any;
   ngOnInit(): void {
-
-      this.cocktailService.getCocktailById("15300").subscribe(data => {
-        this.cocktail = data;
-      });
+    // this.cocktailService.getCocktailById("15300").subscribe(data => {
+    //   this.cocktail = data;
+    // });
   }
 }
