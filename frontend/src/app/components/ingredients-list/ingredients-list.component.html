@@ -1,0 +1,9 @@
+<div class="ingredients-list">
+  <a
+    *ngFor="let item of list"
+    class="btn"
+    [routerLink]="linkTo + '/' + item.toLowerCase()"
+  >
+    {{ item }}
+  </a>
+</div>

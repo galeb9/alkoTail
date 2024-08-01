@@ -1,17 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* You can add global styles to this file, and also import other style files */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  --headerHeight: 64px;
-  --primary: #df2669;
-  --radius: 6px;
-  --transition: all 0.2s ease-in-out;
+@layer base {
+  :root {
+    --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --headerHeight: 64px;
+    --primary: #df2669;
+    --radius: 6px;
+    --transition: all 0.2s ease-in-out;
+  }
 }
 
 body {
@@ -23,11 +30,14 @@ body {
 .custom-container {
   margin: 0 auto;
   max-width: 1200px;
-  padding: 20px;
+  /* padding: 20px; */
 }
 
 .shadow {
   box-shadow: var(--shadow);
+}
+.text-center {
+  text-align: center;
 }
 
 a {

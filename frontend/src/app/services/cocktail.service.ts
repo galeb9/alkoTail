@@ -23,4 +23,11 @@ export class CocktailService {
   getCocktailByAlcohol(alcohol: string) {
     return this.http.get(`${environment.backendBaseUrl}/cocktails/${alcohol}`);
   }
+
+  getAllAlcohol() {
+    return this.http.get(`${environment.backendBaseUrl}/alcohol`);
+  }
+  getIngridients() {
+    return this.http.get(`${environment.backendBaseUrl}/ingredients`);
+  }
 }

@@ -1,11 +1,11 @@
-<div class="header shadow">
+<div class="header shadow py-3">
   <nav class="custom-container">
     <a class="btn" routerLink="/">
       <app-logo />
-      <h3>
-        AlkoTail
-      </h3>
+      <h3>AlkoTail</h3>
     </a>
-
+    <div class="header-links">
+      <a *ngFor="let link of links" [routerLink]="link.to">{{ link.text }}</a>
+    </div>
   </nav>
 </div>

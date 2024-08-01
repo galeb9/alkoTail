@@ -1,6 +1,15 @@
-nav > a{
+.header > nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--primary);
+}
+nav > a {
   display: flex;
   align-items: center;
   gap: 16px;
   border: none;
+}
+a + a {
+  margin-left: 20px;
 }

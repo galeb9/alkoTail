@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CocktailService } from '../../services/cocktail.service';
-import { CommonModule, KeyValue } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Location } from '@angular/common';
 import { finalize } from 'rxjs/operators';
 

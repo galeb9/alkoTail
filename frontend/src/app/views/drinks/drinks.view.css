@@ -1,5 +1,5 @@
 .drinks-container .drinks-title {
-  margin: 60px 0 40px 0;
+  margin-bottom: 40px;
   padding-bottom: 10px;
   border-bottom: 3px solid var(--primary);
   display: flex;

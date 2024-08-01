@@ -1,7 +1,13 @@
 <div class="cocktail-search">
-  <div class="search">
-      <a *ngFor="let alcohol of alcoholList"  class="btn" [routerLink]="'drinks/' + alcohol.toLowerCase()">
-        {{ alcohol }}
-      </a>
+  <div class="text-center my-3">
+    <h2 class="text-2xl mt-10 mb-3 text-color-primary">{{ catchphrase }}</h2>
+    <p class="mb-10">
+      *Click on the alcohol options bellow to find what cocktails you can make*
+    </p>
   </div>
+
+  <app-ingredients-list
+    [list]="alcoholList"
+    linkTo="drinks"
+  ></app-ingredients-list>
 </div>

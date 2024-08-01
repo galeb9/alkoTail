@@ -22,7 +22,6 @@ export class DrinksView {
   ) {}
 
   ngOnInit(): void {
-    // this.param =  window.location.href.split("/").pop()
     this.isLoading = true;
     this.drink = this.route.snapshot.params['alcohol'];
     this.cocktailService

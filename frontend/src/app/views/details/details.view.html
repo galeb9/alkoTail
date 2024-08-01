@@ -1,16 +1,16 @@
 <div class="details" *ngIf="cocktail; else elseBlock">
   <div class="info">
-    <h1>{{cocktail?.name}}</h1>
+    <h1 class="text-3xl">{{cocktail?.name}}</h1>
 
     <!-- Instructions -->
     <div *ngIf="cocktail.instructions" class="instructions">
-      <h3 class="primary-col-title">Instructions</h3>
+      <h3 class="primary-col-title text-2xl">Instructions</h3>
       <p>{{ cocktail.instructions.en}}</p>
     </div>
 
     <!-- Ingredients -->
     <div *ngIf="cocktail.ingredients" class="ingredients">
-      <h3 class="primary-col-title">Ingredients</h3>
+      <h3 class="primary-col-title text-2xl">Ingredients</h3>
       <div *ngFor="let ingredient of cocktail?.ingredients" class="ingredient">
         <b>{{ingredient.name}}</b>
         <span>{{ ingredient.measure || "N/A" }}</span>
