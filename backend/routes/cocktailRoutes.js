@@ -1,13 +1,16 @@
 const express = require("express");
 const {
-  getCocktailWithName,
+  getCocktailsWithIngredient,
   getCocktailWithId,
+  getIngredients,
+  getAllAlcohol,
 } = require("../controllers/cocktailController");
 
 const router = express.Router();
 
-router.get("/cocktails/:name", getCocktailWithName);
-
+router.get("/cocktails/:ingredient", getCocktailsWithIngredient);
 router.get("/cocktail/:id", getCocktailWithId);
+router.get("/ingredients", getIngredients);
+router.get("/alcohol", getAllAlcohol);
 
 module.exports = router;

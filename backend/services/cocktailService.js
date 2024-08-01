@@ -1,11 +1,12 @@
 const axios = require("axios");
 
-const getCocktailByName = async (name) => {
+const getCocktailsByingredient = async (ingredient) => {
   try {
     const response = await axios.get(
-      `${process.env.COCKTAIL_API_URI}/search.php?s=${name}`
+      `${process.env.COCKTAIL_API_URI}/filter.php?i=${encodeURIComponent(
+        ingredient
+      )}`
     );
-
     return response.data;
   } catch (err) {
     throw new Error("Error fetching cocktail data");
@@ -24,7 +25,19 @@ const getCocktailById = async (id) => {
   }
 };
 
+const getAllIngredients = async () => {
+  try {
+    const response = await axios.get(
+      `${process.env.COCKTAIL_API_URI}/list.php?i=list`
+    );
+    return response.data;
+  } catch (err) {
+    throw new Error("Error fetching ingredients data");
+  }
+};
+
 module.exports = {
-  getCocktailByName,
+  getAllIngredients,
+  getCocktailsByingredient,
   getCocktailById,
 };

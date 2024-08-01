@@ -1,16 +1,90 @@
 const {
-  getCocktailByName,
+  getCocktailsByingredient,
   getCocktailById,
+  getAllIngredients,
 } = require("../services/cocktailService");
+
+const nonAlcoholicIngredients = [
+  "Tea",
+  "Champagne",
+  "Lime juice",
+  "Watermelon",
+  "Carbonated water",
+  "Grenadine",
+  "Apple juice",
+  "Pineapple juice",
+  "Lemon juice",
+  "Sugar syrup",
+  "Milk",
+  "Strawberries",
+  "Chocolate syrup",
+  "Yoghurt",
+  "Mango",
+  "Ginger",
+  "Lime",
+  "Cantaloupe",
+  "Berries",
+  "Grapes",
+  "Kiwi",
+  "Tomato juice",
+  "Cocoa powder",
+  "Chocolate",
+  "Heavy cream",
+  "Orange",
+  "Cranberries",
+  "Apple cider",
+  "Cranberry juice",
+  "Grape juice",
+  "Peach nectar",
+  "Lemon",
+  "Lemonade",
+  "7-Up",
+  "Sprite",
+  "Espresso",
+  "Water",
+  "Sugar",
+  "Coffee",
+  "Egg",
+  "Egg yolk",
+];
+
+const getIngredients = async (req, res) => {
+  try {
+    const data = await getAllIngredients();
+    if (!data.drinks) {
+      return res.status(404).json({ message: "Cocktail not found" });
+    }
+    const ingredients = data.drinks.map((drink) => drink.strIngredient1);
+    res.json(ingredients);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
+const getAllAlcohol = async (req, res) => {
+  try {
+    const ingredients = await getAllIngredients();
+    if (!ingredients.drinks) {
+      return res.status(404).json({ message: "Cocktail not found" });
+    }
+    const alcohol = ingredients.drinks
+      .map((drink) => drink.strIngredient1)
+      .filter((ingredient) => !nonAlcoholicIngredients.includes(ingredient));
+
+    res.json(alcohol);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
 
 // @desc Get cocktail by name
 // @route GET /api/cocktails/:name
 // @access Public
-const getCocktailWithName = async (req, res) => {
-  const name = req.params.name;
+const getCocktailsWithIngredient = async (req, res) => {
+  const ingredient = req.params.ingredient;
 
   try {
-    const data = await getCocktailByName(name);
+    const data = await getCocktailsByingredient(ingredient);
 
     if (!data.drinks) {
       return res.status(404).json({ message: "Cocktail not found" });
@@ -22,6 +96,7 @@ const getCocktailWithName = async (req, res) => {
   }
 };
 
+// get cocktail details
 const getCocktailWithId = async (req, res) => {
   const id = req.params.id;
 
@@ -31,10 +106,7 @@ const getCocktailWithId = async (req, res) => {
     if (!data.drinks) {
       return res.status(404).json({ message: "Cocktail not found" });
     }
-
-    // must parse the item
     const d = data.drinks[0];
-
     const {
       idDrink,
       strDrink,
@@ -83,6 +155,8 @@ const getCocktailWithId = async (req, res) => {
 };
 
 module.exports = {
-  getCocktailWithName,
+  getCocktailsWithIngredient,
   getCocktailWithId,
+  getIngredients,
+  getAllAlcohol,
 };
