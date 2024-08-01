@@ -1,10 +1,4 @@
-import {
-  Component,
-  Input,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-} from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CocktailService } from '../../services/cocktail.service';
 import { CommonModule, KeyValue } from '@angular/common';
@@ -42,7 +36,6 @@ export class DetailsView implements OnInit {
         })
       )
       .subscribe((data) => {
-        console.log(data);
         this.cocktail = data;
       });
   }
@@ -51,10 +44,10 @@ export class DetailsView implements OnInit {
     this.location.back();
   }
 
-  valueAscOrder = (
-    a: KeyValue<string, string>,
-    b: KeyValue<string, string>
-  ): number => {
-    return a.key.localeCompare(b.key);
-  };
+  // valueAscOrder = (
+  //   a: KeyValue<string, string>,
+  //   b: KeyValue<string, string>
+  // ): number => {
+  //   return a.key.localeCompare(b.key);
+  // };
 }
