@@ -7,6 +7,6 @@ import { IngredientsView } from './views/ingredients/ingredients.view';
 export const routes: Routes = [
   { path: '', component: HomeView },
   { path: 'drinks/:alcohol', component: DrinksView },
-  { path: 'details/:id', component: DetailsView },
+  { path: 'drinks/:alcohol/details/:id', component: DetailsView },
   { path: 'ingredients', component: IngredientsView },
 ];
